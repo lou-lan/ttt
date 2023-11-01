@@ -25,7 +25,7 @@ jobs:
           
           # check is latest version
           git checkout -f ${{ env.MERGE_BRANCH }}
-          if [ -e "${DOCS_VERSION}" ]; then
+          if [ -e "$DOCS_VERSION" ]; then
               export SET_LATEST=false
           else
               export SET_LATEST=true
