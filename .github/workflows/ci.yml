@@ -37,7 +37,7 @@ jobs:
               export SET_LATEST=true
           fi
           echo "SET_LATEST=$SET_LATEST"
-          echo "===========23"
+          echo "===========2"
 
           # build docs
           git checkout -
