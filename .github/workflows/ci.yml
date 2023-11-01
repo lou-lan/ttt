@@ -24,7 +24,7 @@ jobs:
           DOCS_VERSION=` cat VERSION  | tr -d ' ' | tr -d '\n' | grep -Eo "v[0-9]+\.[0-9]+" `
 
           echo "===========1"
-          
+          git fetch
           # check is latest version
           git checkout -f ${{ env.MERGE_BRANCH }}
 
