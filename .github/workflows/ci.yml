@@ -22,16 +22,24 @@ jobs:
           
           # read current version
           DOCS_VERSION=` cat VERSION  | tr -d ' ' | tr -d '\n' | grep -Eo "v[0-9]+\.[0-9]+" `
+
+          echo "===========1"
           
           # check is latest version
+
           git checkout ${{ env.MERGE_BRANCH }}
-          if [ -e "${DOCS_VERSION}" ]; then
+
+          echo "===========3"
+
+          
+          if [ -e "$DOCS_VERSION" ]; then
               export SET_LATEST=false
           else
               export SET_LATEST=true
           fi
           echo "SET_LATEST=$SET_LATEST"
-          
+          echo "===========2"
+
           # build docs
           git checkout -
           cp ./docs/mkdocs.yml ./
