@@ -24,7 +24,7 @@ jobs:
           DOCS_VERSION=` cat VERSION  | tr -d ' ' | tr -d '\n' | grep -Eo "v[0-9]+\.[0-9]+" `
           
           # check is latest version
-          git checkout -f ${{ env.MERGE_BRANCH }}
+          git checkout ${{ env.MERGE_BRANCH }}
           if [ -e "${DOCS_VERSION}" ]; then
               export SET_LATEST=false
           else
